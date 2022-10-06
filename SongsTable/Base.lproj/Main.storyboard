@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="24h-lr-HtO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,13 +31,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNK-yr-k1B">
-                                            <rect key="frame" x="205" y="10" width="199" height="39.5"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
+                                            <rect key="frame" x="205" y="10" width="199" height="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3F-Aw-a7f">
-                                            <rect key="frame" x="205" y="163" width="52" height="27"/>
+                                            <rect key="frame" x="205" y="48" width="52" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                                         <constraint firstItem="Gzn-tc-4DU" firstAttribute="top" secondItem="pfy-fj-Ug3" secondAttribute="topMargin" constant="10" id="IWv-wM-ert"/>
                                         <constraint firstItem="Gzn-tc-4DU" firstAttribute="leading" secondItem="pfy-fj-Ug3" secondAttribute="leadingMargin" constant="10" id="ann-Xi-eT0"/>
                                         <constraint firstItem="C3F-Aw-a7f" firstAttribute="leading" secondItem="Gzn-tc-4DU" secondAttribute="trailing" constant="25" id="gZB-1J-7SI"/>
-                                        <constraint firstAttribute="bottom" secondItem="C3F-Aw-a7f" secondAttribute="bottom" constant="10" id="qyd-Bs-Ceq"/>
+                                        <constraint firstAttribute="bottom" secondItem="C3F-Aw-a7f" secondAttribute="bottom" constant="125" id="qyd-Bs-Ceq"/>
                                         <constraint firstAttribute="trailing" secondItem="ZNK-yr-k1B" secondAttribute="trailing" constant="10" id="tLT-Ww-qM9"/>
                                         <constraint firstItem="ZNK-yr-k1B" firstAttribute="leading" secondItem="Gzn-tc-4DU" secondAttribute="trailing" constant="25" id="xh1-KH-5P2"/>
                                         <constraint firstItem="ZNK-yr-k1B" firstAttribute="top" secondItem="pfy-fj-Ug3" secondAttribute="top" constant="10" id="z96-RY-sxR"/>
