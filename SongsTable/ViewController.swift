@@ -44,21 +44,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch songTable[indexPath.row].getTitle() {
-            case "Dancing with the dead":
-                playSong(soundName: "Dancing With The Dead")
-            case "Amaranthine":
-                playSong(soundName: songTable[indexPath.row].getTitle())
-            case "Psychosocial":
-                playSong(soundName: songTable[indexPath.row].getTitle())
-            default:
-                print("Hello")
-            }
-        
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -66,9 +51,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
     }
     
-    func playSong(soundName: String){
-        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)
-        player.play()
-    }
+    
 }

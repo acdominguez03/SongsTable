@@ -19,9 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		338662FD28F091C80001E041 /* Amaranthine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Amaranthine.mp3; sourceTree = "<group>"; };
-		338662FE28F091C80001E041 /* Dancing With The Dead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dancing With The Dead.mp3"; sourceTree = "<group>"; };
-		338662FF28F091C80001E041 /* Psychosocial.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Psychosocial.mp3; sourceTree = "<group>"; };
 		33AAAFB428EF3AD400B3E883 /* SongsTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongsTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,16 +43,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		338662FC28F091BE0001E041 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				338662FF28F091C80001E041 /* Psychosocial.mp3 */,
-				338662FD28F091C80001E041 /* Amaranthine.mp3 */,
-				338662FE28F091C80001E041 /* Dancing With The Dead.mp3 */,
-			);
-			path = Sounds;
-			sourceTree = "<group>";
-		};
 		33AAAFAB28EF3AD400B3E883 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +62,6 @@
 		33AAAFB628EF3AD400B3E883 /* SongsTable */ = {
 			isa = PBXGroup;
 			children = (
-				338662FC28F091BE0001E041 /* Sounds */,
 				33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */,
 				33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */,
 				33AAAFBB28EF3AD400B3E883 /* ViewController.swift */,
