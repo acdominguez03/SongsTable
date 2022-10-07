@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3386631128F09EAD0001E041 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386631028F09EAD0001E041 /* DetailViewController.swift */; };
 		33AAAFB828EF3AD400B3E883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */; };
 		33AAAFBA28EF3AD400B3E883 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */; };
 		33AAAFBF28EF3AD400B3E883 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAAFBD28EF3AD400B3E883 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3386631028F09EAD0001E041 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		33AAAFB428EF3AD400B3E883 /* SongsTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongsTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				33AAAFD528EF423E00B3E883 /* SongProtocol.swift */,
 				33AAAFD728EF424600B3E883 /* Song.swift */,
 				33AAAFBD28EF3AD400B3E883 /* Main.storyboard */,
+				3386631028F09EAD0001E041 /* DetailViewController.swift */,
 				33AAAFC028EF3AD600B3E883 /* Assets.xcassets */,
 				33AAAFC228EF3AD600B3E883 /* LaunchScreen.storyboard */,
 				33AAAFC528EF3AD600B3E883 /* Info.plist */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33AAAFD828EF424600B3E883 /* Song.swift in Sources */,
+				3386631128F09EAD0001E041 /* DetailViewController.swift in Sources */,
 				33AAAFDA28EF43D700B3E883 /* SongTableViewController.swift in Sources */,
 				33AAAFD428EF422200B3E883 /* SongCell.swift in Sources */,
 				33AAAFD628EF423E00B3E883 /* SongProtocol.swift in Sources */,

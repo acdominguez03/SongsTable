@@ -17,6 +17,9 @@ class SongTableViewController: UITableViewController {
         Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273457163bec7e8e4decf8c6375", title: "Psychosocial", autor: "Slipknot")
     ]
     
+    var songTitle: String = ""
+    var songAutor: String = ""
+    var songImage: UIImage? = nil
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,6 +36,7 @@ class SongTableViewController: UITableViewController {
         let data = try? Data(contentsOf: url!)
         let loadedImage: UIImage = UIImage(data: data!)!
         customCell.songImage.image = loadedImage
+        
         //customCell.songImage = UIImage.loadData()
         
         return customCell
@@ -42,23 +46,34 @@ class SongTableViewController: UITableViewController {
         return 200.0
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
-    }
-
-    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        return false
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .none
+//    }
+//
+//    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
+    
+//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        let movedObject = self.songTable[sourceIndexPath.row]
+//        songTable.remove(at: sourceIndexPath.row)
+//        songTable.insert(movedObject, at: destinationIndexPath.row)
+//    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        songTitle = songTable[indexPath.row].getTitle()
+        songAutor = songTable[indexPath.row].getAutor()
+        performSegue(withIdentifier: "goToDetail", sender: self)
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let movedObject = self.songTable[sourceIndexPath.row]
-        songTable.remove(at: sourceIndexPath.row)
-        songTable.insert(movedObject, at: destinationIndexPath.row)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! DetailViewController).cellSongTitle = songTitle
+        (segue.destination as! DetailViewController).cellSongAutor = songAutor
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.isEditing = true
+//        self.tableView.isEditing = true
     }
 
 }
