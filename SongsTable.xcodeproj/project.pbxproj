@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		338662F728F07B090001E041 /* Amaranthine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 338662F528F07B090001E041 /* Amaranthine.mp3 */; };
+		338662F828F07B090001E041 /* Dancing With The Dead.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 338662F628F07B090001E041 /* Dancing With The Dead.mp3 */; };
+		338662FA28F07C490001E041 /* Psychosocial.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 338662F928F07C490001E041 /* Psychosocial.mp3 */; };
 		33AAAFB828EF3AD400B3E883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */; };
 		33AAAFBA28EF3AD400B3E883 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */; };
 		33AAAFBC28EF3AD400B3E883 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFBB28EF3AD400B3E883 /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		338662F528F07B090001E041 /* Amaranthine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Amaranthine.mp3; path = ../../../../../Downloads/Amaranthine.mp3; sourceTree = "<group>"; };
+		338662F628F07B090001E041 /* Dancing With The Dead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Dancing With The Dead.mp3"; path = "../../../../../Downloads/Dancing With The Dead.mp3"; sourceTree = "<group>"; };
+		338662F928F07C490001E041 /* Psychosocial.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Psychosocial.mp3; path = ../../../../../Downloads/Psychosocial.mp3; sourceTree = "<group>"; };
 		33AAAFB428EF3AD400B3E883 /* SongsTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongsTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		338662EE28F076A70001E041 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				338662F928F07C490001E041 /* Psychosocial.mp3 */,
+				338662F528F07B090001E041 /* Amaranthine.mp3 */,
+				338662F628F07B090001E041 /* Dancing With The Dead.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		33AAAFAB28EF3AD400B3E883 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +81,7 @@
 				33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */,
 				33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */,
 				33AAAFBB28EF3AD400B3E883 /* ViewController.swift */,
+				338662EE28F076A70001E041 /* Sounds */,
 				33AAAFBD28EF3AD400B3E883 /* Main.storyboard */,
 				33AAAFCD28EF3F2300B3E883 /* SongCell.swift */,
 				33AAAFCF28EF3F3800B3E883 /* SongProtocol.swift */,
@@ -135,7 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				33AAAFC428EF3AD600B3E883 /* LaunchScreen.storyboard in Resources */,
+				338662FA28F07C490001E041 /* Psychosocial.mp3 in Resources */,
 				33AAAFC128EF3AD600B3E883 /* Assets.xcassets in Resources */,
+				338662F728F07B090001E041 /* Amaranthine.mp3 in Resources */,
+				338662F828F07B090001E041 /* Dancing With The Dead.mp3 in Resources */,
 				33AAAFBF28EF3AD400B3E883 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

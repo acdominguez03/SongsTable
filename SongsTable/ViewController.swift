@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -15,7 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273457163bec7e8e4decf8c6375", title: "Psychosocial", autor: "Slipknot")
     ]
     
-    
+    var player: AVAudioPlayer!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,6 +43,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 200.0
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch songTable[indexPath.row].getTitle() {
+            case "Dancing with the dead":
+                playSong(soundName: "Dancing With The Dead")
+            case "Amaranthine":
+                playSong(soundName: songTable[indexPath.row].getTitle())
+            case "Psychosocial":
+                playSong(soundName: songTable[indexPath.row].getTitle())
+            default:
+                print("Hello")
+            }
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -49,4 +66,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
     }
     
+    func playSong(soundName: String){
+        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+    }
 }
