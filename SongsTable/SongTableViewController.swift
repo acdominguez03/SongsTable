@@ -32,10 +32,7 @@ class SongTableViewController: UITableViewController {
         customCell.songTitle.text = songTable[indexPath.row].getTitle()
         customCell.songAutor.text = songTable[indexPath.row].getAutor()
         
-        let url = URL(string: songTable[indexPath.row].getImageUrl())
-        let data = try? Data(contentsOf: url!)
-        let loadedImage: UIImage = UIImage(data: data!)!
-        customCell.songImage.image = loadedImage
+        customCell.songImage.image = passUrlToUIImage(urlData: songTable[indexPath.row].getImageUrl())
         
         //customCell.songImage = UIImage.loadData()
         
@@ -63,17 +60,26 @@ class SongTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         songTitle = songTable[indexPath.row].getTitle()
         songAutor = songTable[indexPath.row].getAutor()
+        songImage = passUrlToUIImage(urlData: songTable[indexPath.row].getImageUrl())
         performSegue(withIdentifier: "goToDetail", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         (segue.destination as! DetailViewController).cellSongTitle = songTitle
         (segue.destination as! DetailViewController).cellSongAutor = songAutor
+        (segue.destination as! DetailViewController).cellSongImage = songImage
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.tableView.isEditing = true
+    }
+    
+    func passUrlToUIImage(urlData: String) -> UIImage{
+        let url = URL(string: urlData)
+        let data = try? Data(contentsOf: url!)
+        let loadedImage: UIImage = UIImage(data: data!)!
+        return loadedImage
     }
 
 }

@@ -99,7 +99,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK2-jq-ZJH">
-                                <rect key="frame" x="58" y="410" width="299" height="50"/>
+                                <rect key="frame" x="58" y="380" width="299" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P4g-Ih-gJ9"/>
                                 </constraints>
@@ -114,7 +114,7 @@
                             <constraint firstItem="PXz-Hj-fId" firstAttribute="top" secondItem="DKp-R4-MZN" secondAttribute="bottom" constant="34" id="GHQ-Ht-PQk"/>
                             <constraint firstItem="DKp-R4-MZN" firstAttribute="leading" secondItem="Tl3-yk-Ytg" secondAttribute="leading" constant="107" id="OFT-Fx-sCh"/>
                             <constraint firstItem="Tl3-yk-Ytg" firstAttribute="trailing" secondItem="fK2-jq-ZJH" secondAttribute="trailing" constant="57" id="Srx-oQ-c08"/>
-                            <constraint firstItem="fK2-jq-ZJH" firstAttribute="top" secondItem="PXz-Hj-fId" secondAttribute="bottom" constant="35" id="Y6M-JK-pgO"/>
+                            <constraint firstItem="fK2-jq-ZJH" firstAttribute="top" secondItem="PXz-Hj-fId" secondAttribute="bottom" constant="5" id="Y6M-JK-pgO"/>
                             <constraint firstItem="DKp-R4-MZN" firstAttribute="top" secondItem="Tl3-yk-Ytg" secondAttribute="top" constant="47" id="jhq-0H-sQC"/>
                             <constraint firstItem="fK2-jq-ZJH" firstAttribute="leading" secondItem="Tl3-yk-Ytg" secondAttribute="leading" constant="58" id="k36-Xv-ovV"/>
                             <constraint firstItem="Tl3-yk-Ytg" firstAttribute="trailing" secondItem="PXz-Hj-fId" secondAttribute="trailing" constant="58" id="ksC-63-Ya8"/>

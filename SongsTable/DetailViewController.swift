@@ -26,6 +26,8 @@ class DetailViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         songTitle?.text = cellSongTitle
+        songAutor?.text = cellSongAutor
+        songImage?.image = cellSongImage
     
     }
 }
