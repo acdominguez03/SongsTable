@@ -72,7 +72,6 @@ class SongTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.isEditing = true
     }
     
     func passUrlToUIImage(urlData: String) -> UIImage{
