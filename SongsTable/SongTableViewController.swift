@@ -76,10 +76,12 @@ class SongTableViewController: UITableViewController {
     }
     
     func passUrlToUIImage(urlData: String) -> UIImage{
+        
         let url = URL(string: urlData)
         let data = try? Data(contentsOf: url!)
         let loadedImage: UIImage = UIImage(data: data!)!
         return loadedImage
+        
     }
 
 }
