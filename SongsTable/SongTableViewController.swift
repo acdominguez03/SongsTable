@@ -14,7 +14,9 @@ class SongTableViewController: UITableViewController {
     var songTable = [
         Song(imageUrl: "https://images.genius.com/9048c26badaaec80a2c76eec25f73536.1000x1000x1.jpg", title: "Dancing with the dead", autor: "Powerwolf"),
         Song(imageUrl: "https://m.media-amazon.com/images/I/81JtvRjJkSL._SS500_.jpg", title: "Amaranthine", autor: "Amaranthe"),
-        Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273457163bec7e8e4decf8c6375", title: "Psychosocial", autor: "Slipknot")
+        Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273457163bec7e8e4decf8c6375", title: "Psychosocial", autor: "Slipknot"),
+        Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273bf1adf8d4e66b044421376ef", title: "A morir", autor: "Saratoga"),
+        Song(imageUrl: "https://img.youtube.com/vi/dchOBArzefw/hqdefault.jpg", title: "Welcome to the Family", autor: "Avenged Sevenfold")
     ]
     
     var songTitle: String = ""
@@ -64,7 +66,7 @@ class SongTableViewController: UITableViewController {
         performSegue(withIdentifier: "goToDetail", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         (segue.destination as! DetailViewController).cellSongTitle = songTitle
         (segue.destination as! DetailViewController).cellSongAutor = songAutor
         (segue.destination as! DetailViewController).cellSongImage = songImage

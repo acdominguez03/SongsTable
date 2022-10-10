@@ -99,11 +99,23 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK2-jq-ZJH">
-                                <rect key="frame" x="58" y="380" width="299" height="50"/>
+                                <rect key="frame" x="58" y="380" width="299" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="P4g-Ih-gJ9"/>
+                                    <constraint firstAttribute="height" constant="30" id="P4g-Ih-gJ9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tni-HZ-S6O">
+                                <rect key="frame" x="0.0" y="657" width="414" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="HdJ-PE-Z55"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SONGS CATEGORIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crC-Re-LSQ">
+                                <rect key="frame" x="57" y="617" width="299" height="32"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -111,19 +123,26 @@
                         <viewLayoutGuide key="safeArea" id="Tl3-yk-Ytg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tni-HZ-S6O" secondAttribute="trailing" id="1yl-f1-NnQ"/>
                             <constraint firstItem="PXz-Hj-fId" firstAttribute="top" secondItem="DKp-R4-MZN" secondAttribute="bottom" constant="34" id="GHQ-Ht-PQk"/>
+                            <constraint firstItem="crC-Re-LSQ" firstAttribute="leading" secondItem="p2l-0o-OuI" secondAttribute="leadingMargin" constant="37" id="GSk-lp-ogm"/>
+                            <constraint firstAttribute="bottom" secondItem="Tni-HZ-S6O" secondAttribute="bottom" constant="110" id="HyC-7p-gQe"/>
                             <constraint firstItem="DKp-R4-MZN" firstAttribute="leading" secondItem="Tl3-yk-Ytg" secondAttribute="leading" constant="107" id="OFT-Fx-sCh"/>
                             <constraint firstItem="Tl3-yk-Ytg" firstAttribute="trailing" secondItem="fK2-jq-ZJH" secondAttribute="trailing" constant="57" id="Srx-oQ-c08"/>
                             <constraint firstItem="fK2-jq-ZJH" firstAttribute="top" secondItem="PXz-Hj-fId" secondAttribute="bottom" constant="5" id="Y6M-JK-pgO"/>
+                            <constraint firstItem="Tni-HZ-S6O" firstAttribute="top" secondItem="crC-Re-LSQ" secondAttribute="bottom" constant="8" id="eU4-UN-CFN"/>
                             <constraint firstItem="DKp-R4-MZN" firstAttribute="top" secondItem="Tl3-yk-Ytg" secondAttribute="top" constant="47" id="jhq-0H-sQC"/>
                             <constraint firstItem="fK2-jq-ZJH" firstAttribute="leading" secondItem="Tl3-yk-Ytg" secondAttribute="leading" constant="58" id="k36-Xv-ovV"/>
                             <constraint firstItem="Tl3-yk-Ytg" firstAttribute="trailing" secondItem="PXz-Hj-fId" secondAttribute="trailing" constant="58" id="ksC-63-Ya8"/>
                             <constraint firstItem="Tl3-yk-Ytg" firstAttribute="trailing" secondItem="DKp-R4-MZN" secondAttribute="trailing" constant="107" id="pe0-L8-dRH"/>
+                            <constraint firstItem="Tni-HZ-S6O" firstAttribute="leading" secondItem="p2l-0o-OuI" secondAttribute="leading" id="sge-Dl-zZT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="crC-Re-LSQ" secondAttribute="trailing" constant="38" id="uEW-fW-0tO"/>
                             <constraint firstItem="PXz-Hj-fId" firstAttribute="leading" secondItem="Tl3-yk-Ytg" secondAttribute="leading" constant="57" id="zEc-ck-7hz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CEe-Ae-1An"/>
                     <connections>
+                        <outlet property="pickerView" destination="Tni-HZ-S6O" id="wqp-Tc-MJb"/>
                         <outlet property="songAutor" destination="fK2-jq-ZJH" id="54B-zw-3qk"/>
                         <outlet property="songImage" destination="DKp-R4-MZN" id="E2g-Tm-f3M"/>
                         <outlet property="songTitle" destination="PXz-Hj-fId" id="did-lY-yR2"/>

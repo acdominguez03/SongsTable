@@ -8,11 +8,13 @@
 import Foundation
 import UIKit
 
-class DetailViewController: UIViewController{
+class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     var cellSongTitle: String? = nil
     var cellSongAutor: String? = nil
     var cellSongImage: UIImage? = nil
+    
+    var pickerViewData: [String] = []
     
     @IBOutlet weak var songTitle: UILabel!
     
@@ -20,14 +22,36 @@ class DetailViewController: UIViewController{
     
     @IBOutlet weak var songImage: UIImageView!
     
+    @IBOutlet weak var pickerView: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addDataToPickerView()
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
     }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerViewData.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+           return pickerViewData[row]
+       }
     
     override func viewWillAppear(_ animated: Bool) {
         songTitle?.text = cellSongTitle
         songAutor?.text = cellSongAutor
         songImage?.image = cellSongImage
     
+    }
+    
+    func addDataToPickerView(){
+        pickerViewData = ["Metal", "Rock", "Pop", "Power-Metal", "Funk", "Rap", "Disco"]
     }
 }
