@@ -108,13 +108,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tni-HZ-S6O">
-                                <rect key="frame" x="0.0" y="657" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="632" width="414" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="HdJ-PE-Z55"/>
+                                    <constraint firstAttribute="height" constant="100" id="HdJ-PE-Z55"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SONGS CATEGORIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crC-Re-LSQ">
-                                <rect key="frame" x="57" y="617" width="299" height="32"/>
+                                <rect key="frame" x="57" y="592" width="299" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

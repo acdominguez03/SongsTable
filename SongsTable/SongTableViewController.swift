@@ -8,15 +8,13 @@
 import UIKit
 
 class SongTableViewController: UITableViewController {
-    
-    // MARK: - Table view data source
 
     var songTable = [
         Song(imageUrl: "https://images.genius.com/9048c26badaaec80a2c76eec25f73536.1000x1000x1.jpg", title: "Dancing with the dead", autor: "Powerwolf"),
         Song(imageUrl: "https://m.media-amazon.com/images/I/81JtvRjJkSL._SS500_.jpg", title: "Amaranthine", autor: "Amaranthe"),
         Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273457163bec7e8e4decf8c6375", title: "Psychosocial", autor: "Slipknot"),
-        Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273bf1adf8d4e66b044421376ef", title: "A morir", autor: "Saratoga"),
-        Song(imageUrl: "https://img.youtube.com/vi/dchOBArzefw/hqdefault.jpg", title: "Welcome to the Family", autor: "Avenged Sevenfold")
+//        Song(imageUrl: "https://i.scdn.co/image/ab67616d0000b273bf1adf8d4e66b044421376ef", title: "A morir", autor: "Saratoga"),
+//        Song(imageUrl: "https://img.youtube.com/vi/dchOBArzefw/hqdefault.jpg", title: "Welcome to the Family", autor: "Avenged Sevenfold")
     ]
     
     var songTitle: String = ""
@@ -41,23 +39,29 @@ class SongTableViewController: UITableViewController {
         return customCell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 200.0
+//    }
+//    
+    //Secciones
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        view.backgroundColor = .gray
+        
+        let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
+        label.text = songTable[section].getTitle()
+        view.addSubview(label)
+        return view
     }
     
-//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .none
-//    }
-//
-//    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
     
-//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        let movedObject = self.songTable[sourceIndexPath.row]
-//        songTable.remove(at: sourceIndexPath.row)
-//        songTable.insert(movedObject, at: destinationIndexPath.row)
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return songTable.count
+    }
+
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         songTitle = songTable[indexPath.row].getTitle()
