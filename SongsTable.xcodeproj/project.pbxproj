@@ -14,8 +14,7 @@
 		33AAAFC128EF3AD600B3E883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33AAAFC028EF3AD600B3E883 /* Assets.xcassets */; };
 		33AAAFC428EF3AD600B3E883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAAFC228EF3AD600B3E883 /* LaunchScreen.storyboard */; };
 		33AAAFD428EF422200B3E883 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFD328EF422200B3E883 /* SongCell.swift */; };
-		33AAAFD628EF423E00B3E883 /* SongProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFD528EF423E00B3E883 /* SongProtocol.swift */; };
-		33AAAFD828EF424600B3E883 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFD728EF424600B3E883 /* Song.swift */; };
+		33AAAFD828EF424600B3E883 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFD728EF424600B3E883 /* Data.swift */; };
 		33AAAFDA28EF43D700B3E883 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFD928EF43D700B3E883 /* SongTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +28,7 @@
 		33AAAFC328EF3AD600B3E883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33AAAFC528EF3AD600B3E883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33AAAFD328EF422200B3E883 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
-		33AAAFD528EF423E00B3E883 /* SongProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongProtocol.swift; sourceTree = "<group>"; };
-		33AAAFD728EF424600B3E883 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		33AAAFD728EF424600B3E883 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		33AAAFD928EF43D700B3E883 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		336D473B28F5E0C500F5CEAC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				33AAAFD728EF424600B3E883 /* Data.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		33AAAFAB28EF3AD400B3E883 = {
 			isa = PBXGroup;
 			children = (
@@ -64,12 +70,11 @@
 		33AAAFB628EF3AD400B3E883 /* SongsTable */ = {
 			isa = PBXGroup;
 			children = (
+				336D473B28F5E0C500F5CEAC /* model */,
 				33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */,
 				33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */,
 				33AAAFD928EF43D700B3E883 /* SongTableViewController.swift */,
 				33AAAFD328EF422200B3E883 /* SongCell.swift */,
-				33AAAFD528EF423E00B3E883 /* SongProtocol.swift */,
-				33AAAFD728EF424600B3E883 /* Song.swift */,
 				33AAAFBD28EF3AD400B3E883 /* Main.storyboard */,
 				3386631028F09EAD0001E041 /* DetailViewController.swift */,
 				33AAAFC028EF3AD600B3E883 /* Assets.xcassets */,
@@ -150,11 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33AAAFD828EF424600B3E883 /* Song.swift in Sources */,
+				33AAAFD828EF424600B3E883 /* Data.swift in Sources */,
 				3386631128F09EAD0001E041 /* DetailViewController.swift in Sources */,
 				33AAAFDA28EF43D700B3E883 /* SongTableViewController.swift in Sources */,
 				33AAAFD428EF422200B3E883 /* SongCell.swift in Sources */,
-				33AAAFD628EF423E00B3E883 /* SongProtocol.swift in Sources */,
 				33AAAFB828EF3AD400B3E883 /* AppDelegate.swift in Sources */,
 				33AAAFBA28EF3AD400B3E883 /* SceneDelegate.swift in Sources */,
 			);

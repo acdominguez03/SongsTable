@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var cellSongTitle: String? = nil
     var cellSongAutor: String? = nil
     var cellSongImage: UIImage? = nil
+    var category: Int? = nil
     
     var pickerViewData: [String] = []
     
@@ -30,6 +31,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         addDataToPickerView()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
+        
+        pickerView.selectRow(category!, inComponent: 0, animated: false)
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -52,6 +55,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func addDataToPickerView(){
-        pickerViewData = ["Metal", "Rock", "Pop", "Power-Metal", "Funk", "Rap", "Disco"]
+        pickerViewData = ["Metal", "Pop", "Rock","Funk", "Rap"]
     }
 }
