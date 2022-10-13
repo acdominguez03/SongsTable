@@ -46,7 +46,7 @@ class TableViewPresenter{
         let customCell: SongCell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongCell
         
         customCell.songTitle.text = getSongs()[indexPath.section].categorySongs![indexPath.row].title
-        customCell.songAutor.text = getSongs()[indexPath.section].categorySongs![indexPath.row].autor
+        customCell.songAutor.text = getSongs()[indexPath.section].categorySongs![indexPath.row].description
         
         customCell.songImage.image = passUrlToUIImage(urlData: getSongs()[indexPath.section].categorySongs![indexPath.row].imageUrl)
         
@@ -55,17 +55,24 @@ class TableViewPresenter{
     
     func getDataToDetail(indexPath: IndexPath){
         songTitleDetail = getSongs()[indexPath.section].categorySongs![indexPath.row].title
-        songAutorDetail = getSongs()[indexPath.section].categorySongs![indexPath.row].autor
+        songAutorDetail = getSongs()[indexPath.section].categorySongs![indexPath.row].description
         songImageDetail = passUrlToUIImage(urlData: getSongs()[indexPath.section].categorySongs![indexPath.row].imageUrl)
         
         categoryDetail = indexPath.section
     }
     
     func sendDataToDetail(segue: UIStoryboardSegue){
-        (segue.destination as! DetailViewController).detailPresenter.cellSongTitle = songTitleDetail
-        (segue.destination as! DetailViewController).detailPresenter.cellSongAutor = songAutorDetail
-        (segue.destination as! DetailViewController).detailPresenter.cellSongImage = songImageDetail
-        (segue.destination as! DetailViewController).detailPresenter.category = categoryDetail
+        
+        if let destination = segue.destination as? DetailViewController{
+            destination.detailPresenter.cellSongTitle = songTitleDetail
+            destination.detailPresenter.cellSongAutor = songAutorDetail
+            destination.detailPresenter.cellSongImage = songImageDetail
+            destination.detailPresenter.category = categoryDetail
+        }
+        
+        if let destination = segue.destination as? AddViewController{
+            
+        }
     }
     
     

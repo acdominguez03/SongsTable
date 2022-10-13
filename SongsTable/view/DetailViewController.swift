@@ -14,7 +14,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var songTitle: UILabel!
     
-    @IBOutlet weak var songAutor: UILabel!
+    @IBOutlet weak var songDescription: UITextView!
     
     @IBOutlet weak var songImage: UIImageView!
     
@@ -28,6 +28,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.pickerView.dataSource = self
         
         pickerView.selectRow(detailPresenter.getCategoryValue(), inComponent: 0, animated: false)
+        pickerView.isUserInteractionEnabled = false
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -39,11 +40,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return detailPresenter.returnTitleForRowPickerView(row: row)
-       }
+        return detailPresenter.returnTitleForRowPickerView(row: row)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        detailPresenter.setValuesToCells(songTitle: songTitle, songAutor: songAutor, songImage: songImage)
+        detailPresenter.setValuesToCells(songTitle: songTitle, songDescription: songDescription, songImage: songImage)
     
     }
 }

@@ -13,12 +13,12 @@ class Song{
     
     var title: String = ""
     
-    var autor: String = ""
+    var description: String = ""
     
-    init(imageUrl: String, title: String, autor: String) {
+    init(imageUrl: String, title: String, description: String) {
         self.imageUrl = imageUrl
         self.title = title
-        self.autor = autor
+        self.description = description
     }
     
 }

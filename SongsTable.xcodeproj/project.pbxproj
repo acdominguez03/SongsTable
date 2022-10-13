@@ -12,6 +12,8 @@
 		101D24AE28F81A0300B62A89 /* SongService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101D24AD28F81A0300B62A89 /* SongService.swift */; };
 		101D24B028F81A2C00B62A89 /* CategorySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101D24AF28F81A2C00B62A89 /* CategorySong.swift */; };
 		10B63E7528F746D4000A178D /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B63E7428F746D4000A178D /* TableViewPresenter.swift */; };
+		333116EB28F871B300CC415A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333116EA28F871B300CC415A /* AddViewController.swift */; };
+		333116ED28F8846000CC415A /* AddSongPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333116EC28F8846000CC415A /* AddSongPresenter.swift */; };
 		3386631128F09EAD0001E041 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386631028F09EAD0001E041 /* DetailViewController.swift */; };
 		33AAAFB828EF3AD400B3E883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */; };
 		33AAAFBA28EF3AD400B3E883 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAAFB928EF3AD400B3E883 /* SceneDelegate.swift */; };
@@ -29,6 +31,8 @@
 		101D24AD28F81A0300B62A89 /* SongService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongService.swift; sourceTree = "<group>"; };
 		101D24AF28F81A2C00B62A89 /* CategorySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySong.swift; sourceTree = "<group>"; };
 		10B63E7428F746D4000A178D /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
+		333116EA28F871B300CC415A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		333116EC28F8846000CC415A /* AddSongPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongPresenter.swift; sourceTree = "<group>"; };
 		3386631028F09EAD0001E041 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		33AAAFB428EF3AD400B3E883 /* SongsTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongsTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAAFB728EF3AD400B3E883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 				33AAAFD928EF43D700B3E883 /* SongTableViewController.swift */,
 				33AAAFD328EF422200B3E883 /* SongCell.swift */,
 				3386631028F09EAD0001E041 /* DetailViewController.swift */,
+				333116EA28F871B300CC415A /* AddViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -68,6 +73,7 @@
 			children = (
 				10B63E7428F746D4000A178D /* TableViewPresenter.swift */,
 				101D24A928F8133600B62A89 /* DetailPresenter.swift */,
+				333116EC28F8846000CC415A /* AddSongPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -188,11 +194,13 @@
 			files = (
 				101D24AE28F81A0300B62A89 /* SongService.swift in Sources */,
 				33AAAFD828EF424600B3E883 /* Song.swift in Sources */,
+				333116EB28F871B300CC415A /* AddViewController.swift in Sources */,
 				101D24B028F81A2C00B62A89 /* CategorySong.swift in Sources */,
 				3386631128F09EAD0001E041 /* DetailViewController.swift in Sources */,
 				33AAAFDA28EF43D700B3E883 /* SongTableViewController.swift in Sources */,
 				101D24AC28F819E500B62A89 /* PickerViewData.swift in Sources */,
 				101D24AA28F8133600B62A89 /* DetailPresenter.swift in Sources */,
+				333116ED28F8846000CC415A /* AddSongPresenter.swift in Sources */,
 				33AAAFD428EF422200B3E883 /* SongCell.swift in Sources */,
 				33AAAFB828EF3AD400B3E883 /* AppDelegate.swift in Sources */,
 				10B63E7528F746D4000A178D /* TableViewPresenter.swift in Sources */,

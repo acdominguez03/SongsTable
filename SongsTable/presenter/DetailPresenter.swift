@@ -38,9 +38,9 @@ class DetailPresenter{
         pickerViewData.initPìckerViewData()
     }
     
-    func setValuesToCells(songTitle: UILabel, songAutor: UILabel, songImage: UIImageView){
+    func setValuesToCells(songTitle: UILabel, songDescription: UITextView, songImage: UIImageView){
         songTitle.text = cellSongTitle
-        songAutor.text = cellSongAutor
+        songDescription.text = cellSongAutor
         songImage.image = cellSongImage
     }
     
