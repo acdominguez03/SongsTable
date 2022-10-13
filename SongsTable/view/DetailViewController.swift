@@ -10,12 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
-    var cellSongTitle: String? = nil
-    var cellSongAutor: String? = nil
-    var cellSongImage: UIImage? = nil
-    var category: Int? = nil
-    
-    var pickerViewData: [String] = []
+    let detailPresenter: DetailPresenter = DetailPresenter(pickerViewData: PickerViewData())
     
     @IBOutlet weak var songTitle: UILabel!
     
@@ -27,16 +22,16 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailPresenter.initPickerViewData()
         
-        addDataToPickerView()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         
-        pickerView.selectRow(category!, inComponent: 0, animated: false)
+        pickerView.selectRow(detailPresenter.getCategoryValue(), inComponent: 0, animated: false)
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerViewData.count
+        return detailPresenter.getDataCount()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -44,17 +39,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-           return pickerViewData[row]
+            return detailPresenter.returnTitleForRowPickerView(row: row)
        }
     
     override func viewWillAppear(_ animated: Bool) {
-        songTitle?.text = cellSongTitle
-        songAutor?.text = cellSongAutor
-        songImage?.image = cellSongImage
+        detailPresenter.setValuesToCells(songTitle: songTitle, songAutor: songAutor, songImage: songImage)
     
-    }
-    
-    func addDataToPickerView(){
-        pickerViewData = ["Metal", "Pop", "Rock","Funk", "Rap"]
     }
 }

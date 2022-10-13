@@ -7,18 +7,6 @@
 
 import Foundation
 
-
-
-class CategorySong{
-    var categoryName: String?
-    var categorySongs: [Song]?
-         
-    init(categoryName: String, categorySongs: [Song]) {
-        self.categoryName = categoryName
-        self.categorySongs = categorySongs
-    }
-}
-
 class Song{
     
     var imageUrl: String = ""
@@ -34,3 +22,7 @@ class Song{
     }
     
 }
+
+
+
+
