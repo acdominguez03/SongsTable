@@ -26,7 +26,7 @@
                                 <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="26"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="addSong:" destination="ejZ-N0-yCf" eventType="touchUpInside" id="vD8-nB-XKl"/>
+                                <action selector="addSong:" destination="ejZ-N0-yCf" eventType="touchUpInside" id="lgQ-mH-XpG"/>
                             </connections>
                         </button>
                         <prototypes>
@@ -82,7 +82,7 @@
                     </tableView>
                     <connections>
                         <segue destination="FMP-XA-kcx" kind="show" identifier="goToDetail" id="Rwo-Am-Kwu"/>
-                        <segue destination="gPr-gr-nMe" kind="show" identifier="goToAddSong" id="c8l-a1-b3Q"/>
+                        <segue destination="gPr-gr-nMe" kind="show" identifier="goToAdd" id="c8l-a1-b3Q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5T-bT-De9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

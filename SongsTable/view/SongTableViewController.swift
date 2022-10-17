@@ -9,6 +9,7 @@ import UIKit
 
 class SongTableViewController: UITableViewController{
     
+    
     var tableViewPresenter: TableViewPresenter = TableViewPresenter(songService: SongService())
     
     override func viewDidLoad() {
@@ -55,8 +56,12 @@ class SongTableViewController: UITableViewController{
         tableViewPresenter.sendDataToDetail(segue: segue)
     }
     
+    
     @IBAction func addSong(_ sender: Any) {
-        performSegue(withIdentifier: "goToAddSong", sender: nil)
+        tableViewPresenter.getDataForAdd(giveTableView: tableView, giveTableViewPresenter: tableViewPresenter)
+        performSegue(withIdentifier: "goToAdd", sender: nil)
     }
+    
+
     
 }

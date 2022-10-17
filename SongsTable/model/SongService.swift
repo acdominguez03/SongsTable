@@ -40,5 +40,9 @@ class SongService{
     func getSongs() -> [CategorySong]{
         return categorySong
     }
+    
+    func addSong(){
+        categorySong[0].categorySongs?.append(Song(imageUrl: "https://metalcry.com/wp-content/uploads/2018/07/2011-04-18_warcry_alfa_cover_400.jpeg", title:"Warcry", description: "Cobarde"))
+    }
 
 }

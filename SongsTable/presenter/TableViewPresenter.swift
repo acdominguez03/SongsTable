@@ -17,6 +17,9 @@ class TableViewPresenter{
     
     private var categoryDetail: Int = 0
     
+    private var tableView: UITableView!
+    private var tableViewPresenter: TableViewPresenter!
+    
     init(songService: SongService){
         self.songService = songService
     }
@@ -61,6 +64,11 @@ class TableViewPresenter{
         categoryDetail = indexPath.section
     }
     
+    func getDataForAdd(giveTableView: UITableView, giveTableViewPresenter: TableViewPresenter){
+        tableView = giveTableView
+        tableViewPresenter = giveTableViewPresenter
+    }
+    
     func sendDataToDetail(segue: UIStoryboardSegue){
         
         if let destination = segue.destination as? DetailViewController{
@@ -71,9 +79,12 @@ class TableViewPresenter{
         }
         
         if let destination = segue.destination as? AddViewController{
-            
+            destination.tableView = tableView
+            destination.tableViewPresenter = tableViewPresenter
         }
     }
     
-    
+    func addSong(){
+        songService.addSong()
+    }
 }

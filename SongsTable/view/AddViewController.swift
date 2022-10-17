@@ -10,6 +10,9 @@ import UIKit
 
 class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
+    var tableView: UITableView!
+    var tableViewPresenter: TableViewPresenter!
+    
     @IBOutlet weak var songImage: UIImageView!
     @IBOutlet weak var songTitle: UITextField!
     @IBOutlet weak var songDescription: UITextField!
@@ -41,9 +44,8 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     
     @IBAction func addNewSong(_ sender: Any) {
-        if (songImage == nil || songTitle == nil || songDescription == nil || songCategorie == nil){
-            
-        }
-        
+        tableViewPresenter.addSong()
+        tableView.reloadData()
+        dismiss(animated: .random())
     }
 }
