@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     var tableView: UITableView!
@@ -40,12 +41,26 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         return addSongPresenter.returnTitleForRowPickerView(row: row)
     }
     
-    
-    
-    
     @IBAction func addNewSong(_ sender: Any) {
-        tableViewPresenter.addSong()
-        tableView.reloadData()
-        dismiss(animated: .random())
+        if (songTitle.text!.isEmpty || songDescription.text!.isEmpty){
+            showToast(controller: self, message: "Fill all the gaps", seconds: 1)
+        }else{
+            tableViewPresenter.addSong(imageUrl: "https://metalcry.com/wp-content/uploads/2018/07/2011-04-18_warcry_alfa_cover_400.jpeg", title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))
+            tableView.reloadData()
+            dismiss(animated: .random())
+        }
+    }
+    
+    func showToast(controller: UIViewController, message: String, seconds: Double){
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.view.backgroundColor = UIColor.black
+        alert.view.alpha = 0.6
+        alert.view.layer.cornerRadius = 15
+        
+        controller.present(alert, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds){
+            alert.dismiss(animated: true)
+        }
     }
 }

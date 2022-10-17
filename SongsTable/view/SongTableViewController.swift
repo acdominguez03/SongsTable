@@ -15,6 +15,7 @@ class SongTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewPresenter.initSongs()
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +45,6 @@ class SongTableViewController: UITableViewController{
     override func numberOfSections(in tableView: UITableView) -> Int {
         return tableViewPresenter.getSongs().count
     }
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableViewPresenter.getDataToDetail(indexPath: indexPath)
