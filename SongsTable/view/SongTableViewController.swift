@@ -57,6 +57,9 @@ class SongTableViewController: UITableViewController{
     }
     
     
+    @IBAction func addSong(_ sender: Any) {
+        performSegue(withIdentifier: "goToAdd", sender: nil)
+    }
     
 
     
