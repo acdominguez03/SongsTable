@@ -15,7 +15,7 @@ class SongTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewPresenter.initSongs()
-        
+        tableViewPresenter.getDataForAdd(giveTableView: tableView, giveTableViewPresenter: tableViewPresenter)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,10 +57,6 @@ class SongTableViewController: UITableViewController{
     }
     
     
-    @IBAction func addSong(_ sender: Any) {
-        tableViewPresenter.getDataForAdd(giveTableView: tableView, giveTableViewPresenter: tableViewPresenter)
-        performSegue(withIdentifier: "goToAdd", sender: nil)
-    }
     
 
     

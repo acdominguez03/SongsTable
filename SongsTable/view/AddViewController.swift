@@ -11,8 +11,6 @@ import UIKit
 
 class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
-    var tableView: UITableView!
-    var tableViewPresenter: TableViewPresenter!
     
     @IBOutlet weak var songImage: UIImageView!
     @IBOutlet weak var songTitle: UITextField!
@@ -24,7 +22,8 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        songImage.image = #imageLiteral(resourceName: "imageMountain")
+        songImage.image = #imageLiteral(resourceName: "AddSong")
+        songImage.layer.cornerRadius = 15
         self.songCategorie.delegate = self
         self.songCategorie.dataSource = self
     }
@@ -42,13 +41,14 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     @IBAction func addNewSong(_ sender: Any) {
-        if (songTitle.text!.isEmpty || songDescription.text!.isEmpty){
-            showToast(controller: self, message: "Fill all the gaps", seconds: 1)
-        }else{
-            tableViewPresenter.addSong(imageUrl: "https://metalcry.com/wp-content/uploads/2018/07/2011-04-18_warcry_alfa_cover_400.jpeg", title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))
-            tableView.reloadData()
-            dismiss(animated: .random())
-        }
+//        if (songTitle.text!.isEmpty || songDescription.text!.isEmpty){
+//            showToast(controller: self, message: "Fill all the gaps", seconds: 1)
+//        }else{
+//            tableViewPresenter.addSong(imageUrl: "https://metalcry.com/wp-content/uploads/2018/07/2011-04-18_warcry_alfa_cover_400.jpeg", title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))
+//            tableView.reloadData()
+//            dismiss(animated: .random())
+//        }
+        
     }
     
     func showToast(controller: UIViewController, message: String, seconds: Double){

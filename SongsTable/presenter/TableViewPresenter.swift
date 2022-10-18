@@ -78,10 +78,10 @@ class TableViewPresenter{
             destination.detailPresenter.category = categoryDetail
         }
         
-        if let destination = segue.destination as? AddViewController{
-            destination.tableView = tableView
-            destination.tableViewPresenter = tableViewPresenter
-        }
+//        if let destination = segue.destination as? AddViewController{
+//            destination.tableView = tableView
+//            destination.tableViewPresenter = tableViewPresenter
+//        }
     }
     
     func addSong(imageUrl: String, title: String, description: String, category: Int){
