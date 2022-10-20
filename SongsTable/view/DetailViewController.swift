@@ -26,8 +26,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
+        title = "Detail"
         
-//        pickerView.selectRow(detailPresenter.getCategoryValue(), inComponent: 0, animated: false)
+        songImage.layer.cornerRadius = 15
+        
+        pickerView.selectRow(detailPresenter.getCategoryValue(), inComponent: 0, animated: false)
         pickerView.isUserInteractionEnabled = false
     }
     
