@@ -19,7 +19,8 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var songDescription: UITextField!
     @IBOutlet weak var songCategorie: UIPickerView!
     
-    var imageUrl: String = ""
+    @IBOutlet weak var urlImage: UITextField!
+    
     
     
     private let addSongPresenter: AddSongPresenter = AddSongPresenter(pickerViewData: PickerViewData())
@@ -47,15 +48,21 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     @IBAction func addNewSong(_ sender: Any) {
-        if (songTitle.text!.isEmpty || songDescription.text!.isEmpty){
+        if (songTitle.text!.isEmpty || songDescription.text!.isEmpty || urlImage.text!.isEmpty){
             showToast(controller: self, message: "Fill all the gaps", seconds: 1)
         }else{
-            tableViewPresenter.addSong(imageUrl: imageUrl, title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))
+            tableViewPresenter.addSong(imageUrl: urlImage.text!, title: songTitle.text!, description: songDescription.text!, category: songCategorie.selectedRow(inComponent: 0))
             tableView.reloadData()
             dismiss(animated: .random())
         }
     }
     
+    @IBAction func sawUrl(_ sender: Any) {
+        if(urlImage != nil){
+            songImage.image = passUrlToUIImage(urlData: urlImage.text ?? "")
+        }
+        
+    }
     func showToast(controller: UIViewController, message: String, seconds: Double){
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = UIColor.black
@@ -75,6 +82,15 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         vc.sourceType = .photoLibrary
         vc.allowsEditing = true
         present(vc, animated: true)
+    }
+    
+    func passUrlToUIImage(urlData: String) -> UIImage{
+        
+        let url = URL(string: urlData)
+        let data = try? Data(contentsOf: url!)
+        let loadedImage: UIImage = UIImage(data: data!)!
+        return loadedImage
+        
     }
 }
 
