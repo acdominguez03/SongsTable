@@ -42,7 +42,7 @@ class SongService{
     }
     
     func addSong(imageUrl: String, title: String, description: String, category: Int){
-        categorySong[category].categorySongs?.append(Song(imageUrl: imageUrl, title:title, description: description))
+        categorySong[category].categorySongs?.append(Song(imageUrl: "https://kaseo.es/wp-content/uploads/2016/08/vivir-para-contarlo-violadores-del-verso.jpg", title:title, description: description))
     }
 
 }

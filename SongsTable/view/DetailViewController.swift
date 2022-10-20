@@ -27,7 +27,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         
-//        pickerView.selectRow(detailPresenter.getCategoryValue(), inComponent: 0, animated: false)
+        pickerView.selectRow(detailPresenter.getCategoryValue(), inComponent: 0, animated: false)
         pickerView.isUserInteractionEnabled = false
     }
     
