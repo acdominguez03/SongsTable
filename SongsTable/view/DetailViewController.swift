@@ -20,6 +20,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var pickerView: UIPickerView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailPresenter.initPickerViewData()
@@ -47,7 +48,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        detailPresenter.setValuesToCells(songTitle: songTitle, songDescription: songDescription, songImage: songImage)
-    
+        songTitle.text = detailPresenter.detailSong.title
+        songDescription.text = detailPresenter.detailSong.description
+        songImage.image = UIImage(data: detailPresenter.passUrlToData(urlData: detailPresenter.detailSong.imageUrl))
     }
 }

@@ -6,20 +6,17 @@
 //
 
 import Foundation
-import UIKit
 
 class DetailPresenter{
     
     private let pickerViewData: PickerViewData
     
-    var cellSongTitle: String? = nil
-    var cellSongAutor: String? = nil
-    var cellSongImage: UIImage? = nil
-    var category: Int? = nil
-    
-    init(pickerViewData: PickerViewData){
+    init(pickerViewData: PickerViewData) {
         self.pickerViewData = pickerViewData
     }
+    
+    var detailSong: Song
+    var category: Int
     
     func addDataToPickerView() -> [String]{
         let pickerViewData: [String] = ["Metal", "Pop", "Rock","Funk", "Rap"]
@@ -38,16 +35,23 @@ class DetailPresenter{
         pickerViewData.initPìckerViewData()
     }
     
+    func passUrlToData(urlData: String) -> Data{
+        
+        let url = URL(string: urlData)
+        let data = try? Data(contentsOf: url!)
+        return data!
+        
+    }
+    
+    /*
     func setValuesToCells(songTitle: UILabel, songDescription: UITextView, songImage: UIImageView){
-        songTitle.text = cellSongTitle
-        songDescription.text = cellSongAutor
-        songImage.image = cellSongImage
+        
     }
-    
+    */
     func getCategoryValue() -> Int{
-        return category!
+        return category
     }
-    
+    /*
     func getCellSongTitleValue() -> String{
         return cellSongTitle!
     }
@@ -59,4 +63,5 @@ class DetailPresenter{
     func getCellSongImageValue() -> UIImage{
         return cellSongImage!
     }
+     */
 }

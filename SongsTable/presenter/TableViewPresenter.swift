@@ -6,70 +6,59 @@
 //
 
 import Foundation
-import UIKit
 
 class TableViewPresenter{
+    
+    
     private let songService: SongService
     
-    private var songTitleDetail: String = ""
-    private var songAutorDetail: String = ""
-    private var songImageDetail: UIImage? = nil
+    var songDetail: Song
     
-    private var categoryDetail: Int = 0
+    var categoryDetail: Int = 0
     
-    private var tableView: UITableView!
-    private var tableViewPresenter: TableViewPresenter!
-    
-    init(songService: SongService){
+    init(songService: SongService, songDetail: Song, categoryDetail: Int) {
         self.songService = songService
+        self.songDetail = songDetail
+        self.categoryDetail = categoryDetail
     }
     
     func initSongs(){
         songService.initSongs()
     }
-    func getSongs() -> [CategorySong]{
-        return songService.getSongs()
+    
+    func getSongsCount() -> Int{
+        return songService.getSongs().count
+    }
+    
+    func getSongBySectionAndPosition(indexPath: IndexPath) -> Song{
+        return songService.getSongs()[indexPath.section].categorySongs![indexPath.row]
+    }
+    
+    func getCategoryNameBySection(section: Int) -> String{
+        return songService.getSongs()[section].categoryName ?? ""
     }
     
     func getSongsCountPerSection(section: Int) -> Int{
-        return getSongs()[section].categorySongs?.count ?? 0
+        return songService.getSongs()[section].categorySongs?.count ?? 0
     }
     
-    func passUrlToUIImage(urlData: String) -> UIImage{
+    func passUrlToData(urlData: String) -> Data{
         
         let url = URL(string: urlData)
         let data = try? Data(contentsOf: url!)
-        let loadedImage: UIImage = UIImage(data: data!)!
-        return loadedImage
+        return data!
         
-    }
-    
-    func printCustomCell(indexPath: IndexPath, tableView: UITableView) -> UITableViewCell{
-        
-        let customCell: SongCell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongCell
-        
-        customCell.songTitle.text = getSongs()[indexPath.section].categorySongs![indexPath.row].title
-        customCell.songAutor.text = getSongs()[indexPath.section].categorySongs![indexPath.row].description
-        
-        customCell.songImage.image = passUrlToUIImage(urlData: getSongs()[indexPath.section].categorySongs![indexPath.row].imageUrl)
-        
-        return customCell
     }
     
     func getDataToDetail(indexPath: IndexPath){
-        songTitleDetail = getSongs()[indexPath.section].categorySongs![indexPath.row].title
-        songAutorDetail = getSongs()[indexPath.section].categorySongs![indexPath.row].description
-        songImageDetail = passUrlToUIImage(urlData: getSongs()[indexPath.section].categorySongs![indexPath.row].imageUrl)
+        songDetail.title = getSongBySectionAndPosition(indexPath: indexPath).title
+        songDetail.description = getSongBySectionAndPosition(indexPath: indexPath).description
+        songDetail.imageUrl = getSongBySectionAndPosition(indexPath: indexPath).imageUrl
         
         categoryDetail = indexPath.section
     }
     
-    func getDataForAdd(giveTableView: UITableView, giveTableViewPresenter: TableViewPresenter){
-        tableView = giveTableView
-        tableViewPresenter = giveTableViewPresenter
-    }
-    
-    func sendDataToDetail(segue: UIStoryboardSegue){
+    /*func sendDataToDetail(segue: UIStoryboardSegue){
         
         if let destination = segue.destination as? DetailViewController{
             destination.detailPresenter.cellSongTitle = songTitleDetail
@@ -78,11 +67,11 @@ class TableViewPresenter{
             destination.detailPresenter.category = categoryDetail
         }
         
-//        if let destination = segue.destination as? AddViewController{
-//            destination.tableView = tableView
-//            destination.tableViewPresenter = tableViewPresenter
-//        }
-    }
+        if let destination = segue.destination as? AddViewController{
+            destination.tableView = tableView
+            destination.tableViewPresenter = tableViewPresenter
+        }
+    }*/
     
     func addSong(imageUrl: String, title: String, description: String, category: Int){
         songService.addSong(imageUrl: imageUrl, title: title, description: description, category: category)

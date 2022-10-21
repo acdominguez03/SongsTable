@@ -14,8 +14,7 @@ class SongTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewPresenter.initSongs()
-        tableViewPresenter.getDataForAdd(giveTableView: tableView, giveTableViewPresenter: tableViewPresenter)
+        //tableViewPresenter.getDataForAdd(giveTableView: tableView, giveTableViewPresenter: tableViewPresenter)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,7 +22,14 @@ class SongTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableViewPresenter.printCustomCell(indexPath: indexPath, tableView: tableView)
+        let customCell: SongCell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongCell
+        
+        customCell.songTitle.text = tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).title
+        customCell.songAutor.text = tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).description
+        
+        customCell.songImage.image = UIImage(data: tableViewPresenter.passUrlToData(urlData: tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).imageUrl))!
+        
+        return customCell
     }
     
     //Secciones
@@ -33,7 +39,7 @@ class SongTableViewController: UITableViewController{
         
         let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
         label.font = UIFont.systemFont(ofSize: 20)
-        label.text = tableViewPresenter.getSongs()[section].categoryName
+        label.text = tableViewPresenter.getCategoryNameBySection(section: section)
         view.addSubview(label)
         return view
     }
@@ -43,21 +49,19 @@ class SongTableViewController: UITableViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewPresenter.getSongs().count
+        return tableViewPresenter.getSongsCount()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableViewPresenter.getDataToDetail(indexPath: indexPath)
+        let detailViewController = DetailViewController()
+        detailViewController.detailPresenter.detailSong = tableViewPresenter.songDetail
+        detailViewController.detailPresenter.category = tableViewPresenter.categoryDetail
+        navigationController?.pushViewController(detailViewController, animated: true)
         
-        performSegue(withIdentifier: "goToDetail", sender: nil)
+        
+        //tableViewPresenter.getDataToDetail(indexPath: indexPath)
+        
+        //performSegue(withIdentifier: "goToDetail", sender: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        tableViewPresenter.sendDataToDetail(segue: segue)
-    }
-    
-    
-    
-
     
 }
