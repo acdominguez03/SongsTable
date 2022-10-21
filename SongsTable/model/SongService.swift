@@ -10,6 +10,10 @@ class SongService{
     
     var categorySong = [CategorySong]()
     
+    init(){
+        initSongs()
+    }
+    
     func initSongs(){
         categorySong.append(CategorySong.init(categoryName: "Metal", categorySongs: [
             Song(imageUrl: "https://images.genius.com/9048c26badaaec80a2c76eec25f73536.1000x1000x1.jpg", title: "Dancing with the dead", description: "Powerwolf es una banda alemana de power metal creada en 2003 por los hermanos Charles y Matthew Greywolf, caracterizada por sus temáticas religiosas en las que mezcla líricamente conceptos satánicos y religiosos y por las referencias a leyendas sobre vampiros y hombres lobo. Sin duda alguna han resaltado por sus vestimentas similares a los cuentos folclóricos en dónde se hallan cultos en criptas"),

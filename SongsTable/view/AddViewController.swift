@@ -17,13 +17,19 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var songDescription: UITextField!
     @IBOutlet weak var songCategorie: UIPickerView!
     
+    
+    @IBOutlet weak var urlImage: UITextField!
+    
     private let addSongPresenter: AddSongPresenter = AddSongPresenter(pickerViewData: PickerViewData())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        songImage.image = #imageLiteral(resourceName: "AddSong")
+        songImage.image = #imageLiteral(resourceName: "imageMountain")
+        songImage.layer.masksToBounds = true
         songImage.layer.cornerRadius = 15
+        songImage.layer.borderWidth = 3.0
+        songImage.layer.cornerRadius = songImage.bounds.width / 2
         self.songCategorie.delegate = self
         self.songCategorie.dataSource = self
     }
@@ -41,13 +47,22 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     @IBAction func addNewSong(_ sender: Any) {
-//        if (songTitle.text!.isEmpty || songDescription.text!.isEmpty){
-//            showToast(controller: self, message: "Fill all the gaps", seconds: 1)
-//        }else{
-//            tableViewPresenter.addSong(imageUrl: "https://metalcry.com/wp-content/uploads/2018/07/2011-04-18_warcry_alfa_cover_400.jpeg", title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))
-//            tableView.reloadData()
-//            dismiss(animated: .random())
-//        }
+        if (songTitle.text!.isEmpty || songDescription.text!.isEmpty){
+            showToast(controller: self, message: "Fill all the gaps", seconds: 1)
+        }else{
+            let songTableController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SongTableController") as? SongTableViewController
+            songTableController!.tableViewPresenter.addSong(imageUrl: "https://metalcry.com/wp-content/uploads/2018/07/2011-04-18_warcry_alfa_cover_400.jpeg", title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))
+            showToast(controller: self, message: "Element added", seconds: 1)
+            songTableController!.tableView.reloadData()
+        }
+    }
+    
+    @IBAction func addUrlToImage(_ sender: Any) {
+        if(urlImage.text!.isEmpty){
+            showToast(controller: self, message: "Please put a image url", seconds: 0.5)
+        }else{
+            songImage.image = UIImage(data: addSongPresenter.passUrlToData(urlData: urlImage.text!))
+        }
         
     }
     

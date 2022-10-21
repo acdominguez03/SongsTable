@@ -24,4 +24,12 @@ class AddSongPresenter{
     func returnTitleForRowPickerView(row: Int) -> String{
         pickerViewData.getPickerViewData()[row]
     }
+    
+    func passUrlToData(urlData: String) -> Data{
+        
+        let url = URL(string: urlData)
+        let data = try? Data(contentsOf: url!)
+        return data!
+        
+    }
 }

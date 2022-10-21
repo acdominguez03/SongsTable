@@ -9,12 +9,12 @@ import UIKit
 
 class SongTableViewController: UITableViewController{
     
-    
     var tableViewPresenter: TableViewPresenter = TableViewPresenter(songService: SongService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableViewPresenter.getDataForAdd(giveTableView: tableView, giveTableViewPresenter: tableViewPresenter)
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,6 +30,16 @@ class SongTableViewController: UITableViewController{
         customCell.songImage.image = UIImage(data: tableViewPresenter.passUrlToData(urlData: tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).imageUrl))!
         
         return customCell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -20, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.75){
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
     }
     
     //Secciones
@@ -53,15 +63,13 @@ class SongTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController()
-        detailViewController.detailPresenter.detailSong = tableViewPresenter.songDetail
-        detailViewController.detailPresenter.category = tableViewPresenter.categoryDetail
-        navigationController?.pushViewController(detailViewController, animated: true)
+        tableViewPresenter.getDataToDetail(indexPath: indexPath)
+        let detailViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailController") as? DetailViewController
         
-        
-        //tableViewPresenter.getDataToDetail(indexPath: indexPath)
-        
-        //performSegue(withIdentifier: "goToDetail", sender: nil)
+        detailViewController!.detailPresenter.detailSong = tableViewPresenter.songDetail
+        detailViewController!.detailPresenter.category = tableViewPresenter.categoryDetail
+    
+        self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
     
 }

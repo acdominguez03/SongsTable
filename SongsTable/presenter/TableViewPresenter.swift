@@ -10,17 +10,16 @@ import Foundation
 class TableViewPresenter{
     
     
-    private let songService: SongService
+    let songService: SongService
     
-    var songDetail: Song
+    init(songService: SongService){
+        self.songService = songService
+    }
+    
+    var songDetail: Song = Song(imageUrl: "", title: "", description: "")
     
     var categoryDetail: Int = 0
     
-    init(songService: SongService, songDetail: Song, categoryDetail: Int) {
-        self.songService = songService
-        self.songDetail = songDetail
-        self.categoryDetail = categoryDetail
-    }
     
     func initSongs(){
         songService.initSongs()
@@ -58,20 +57,6 @@ class TableViewPresenter{
         categoryDetail = indexPath.section
     }
     
-    /*func sendDataToDetail(segue: UIStoryboardSegue){
-        
-        if let destination = segue.destination as? DetailViewController{
-            destination.detailPresenter.cellSongTitle = songTitleDetail
-            destination.detailPresenter.cellSongAutor = songAutorDetail
-            destination.detailPresenter.cellSongImage = songImageDetail
-            destination.detailPresenter.category = categoryDetail
-        }
-        
-        if let destination = segue.destination as? AddViewController{
-            destination.tableView = tableView
-            destination.tableViewPresenter = tableViewPresenter
-        }
-    }*/
     
     func addSong(imageUrl: String, title: String, description: String, category: Int){
         songService.addSong(imageUrl: imageUrl, title: title, description: description, category: category)

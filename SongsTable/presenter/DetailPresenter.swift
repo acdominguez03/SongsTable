@@ -15,8 +15,8 @@ class DetailPresenter{
         self.pickerViewData = pickerViewData
     }
     
-    var detailSong: Song
-    var category: Int
+    var detailSong: Song = Song(imageUrl: "", title: "", description: "")
+    var category: Int = 0
     
     func addDataToPickerView() -> [String]{
         let pickerViewData: [String] = ["Metal", "Pop", "Rock","Funk", "Rap"]
@@ -42,26 +42,22 @@ class DetailPresenter{
         return data!
         
     }
-    
-    /*
-    func setValuesToCells(songTitle: UILabel, songDescription: UITextView, songImage: UIImageView){
-        
-    }
-    */
+   
     func getCategoryValue() -> Int{
         return category
     }
-    /*
+    
+    
     func getCellSongTitleValue() -> String{
-        return cellSongTitle!
+        return detailSong.title
     }
     
     func getCellSongAutorValue() -> String{
-        return cellSongAutor!
+        return detailSong.description
     }
     
-    func getCellSongImageValue() -> UIImage{
-        return cellSongImage!
+    func getCellSongImageValue() -> String{
+        return detailSong.imageUrl
     }
-     */
+    
 }

@@ -25,6 +25,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         detailPresenter.initPickerViewData()
         
+        songTitle.text = detailPresenter.getCellSongTitleValue()
+        songDescription.text = detailPresenter.getCellSongAutorValue()
+        songImage.image = UIImage(data: detailPresenter.passUrlToData(urlData: detailPresenter.getCellSongImageValue()))
+        
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         title = "Detail"
@@ -47,9 +51,4 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return detailPresenter.returnTitleForRowPickerView(row: row)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        songTitle.text = detailPresenter.detailSong.title
-        songDescription.text = detailPresenter.detailSong.description
-        songImage.image = UIImage(data: detailPresenter.passUrlToData(urlData: detailPresenter.detailSong.imageUrl))
-    }
 }
