@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
+
 
 class SongTableViewController: UITableViewController{
     
     var tableViewPresenter: TableViewPresenter = TableViewPresenter(songService: SongService())
+    
+    private let database = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,12 @@ class SongTableViewController: UITableViewController{
         customCell.songAutor.text = tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).description
         
         customCell.songImage.image = UIImage(data: tableViewPresenter.passUrlToData(urlData: tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).imageUrl))!
+        
+        customCell.songTitle.type = .continuous
+        customCell.songTitle.speed = .duration(3.0)
+        customCell.songTitle.animationCurve = .easeInOut
+        customCell.songTitle.fadeLength = 10.0
+        customCell.songTitle.trailingBuffer = 20.0
         
         return customCell
     }
@@ -71,5 +81,7 @@ class SongTableViewController: UITableViewController{
     
         self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
+    
+    func 
     
 }

@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import MarqueeLabel
 
 class SongCell: UITableViewCell{
     
     
     @IBOutlet weak var songAutor: UILabel!
     @IBOutlet weak var songImage: UIImageView!
-    @IBOutlet weak var songTitle: UILabel!
+    @IBOutlet weak var songTitle: MarqueeLabel!
     
     
 }

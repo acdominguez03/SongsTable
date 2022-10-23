@@ -12,6 +12,7 @@
 		101D24AE28F81A0300B62A89 /* SongService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101D24AD28F81A0300B62A89 /* SongService.swift */; };
 		101D24B028F81A2C00B62A89 /* CategorySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101D24AF28F81A2C00B62A89 /* CategorySong.swift */; };
 		10B63E7528F746D4000A178D /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B63E7428F746D4000A178D /* TableViewPresenter.swift */; };
+		2D86B3B994A8FAC0DF57A14E /* Pods_SongsTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3152F95119695E67CF4B8F71 /* Pods_SongsTable.framework */; };
 		333116EB28F871B300CC415A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333116EA28F871B300CC415A /* AddViewController.swift */; };
 		333116ED28F8846000CC415A /* AddSongPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333116EC28F8846000CC415A /* AddSongPresenter.swift */; };
 		3386631128F09EAD0001E041 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386631028F09EAD0001E041 /* DetailViewController.swift */; };
@@ -31,6 +32,9 @@
 		101D24AD28F81A0300B62A89 /* SongService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongService.swift; sourceTree = "<group>"; };
 		101D24AF28F81A2C00B62A89 /* CategorySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySong.swift; sourceTree = "<group>"; };
 		10B63E7428F746D4000A178D /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
+		14EE2BE8A61C3FDFC487F34E /* Pods-SongsTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsTable.release.xcconfig"; path = "Target Support Files/Pods-SongsTable/Pods-SongsTable.release.xcconfig"; sourceTree = "<group>"; };
+		1E9BE1ECE181078663CB84A4 /* Pods-SongsTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsTable.debug.xcconfig"; path = "Target Support Files/Pods-SongsTable/Pods-SongsTable.debug.xcconfig"; sourceTree = "<group>"; };
+		3152F95119695E67CF4B8F71 /* Pods_SongsTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongsTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		333116EA28F871B300CC415A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		333116EC28F8846000CC415A /* AddSongPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongPresenter.swift; sourceTree = "<group>"; };
 		3386631028F09EAD0001E041 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D86B3B994A8FAC0DF57A14E /* Pods_SongsTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,8 @@
 			children = (
 				33AAAFB628EF3AD400B3E883 /* SongsTable */,
 				33AAAFB528EF3AD400B3E883 /* Products */,
+				A6906655EFC32BE3A65DAA40 /* Pods */,
+				FC9DBE788A5FB573347A779E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +128,24 @@
 			path = SongsTable;
 			sourceTree = "<group>";
 		};
+		A6906655EFC32BE3A65DAA40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E9BE1ECE181078663CB84A4 /* Pods-SongsTable.debug.xcconfig */,
+				14EE2BE8A61C3FDFC487F34E /* Pods-SongsTable.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC9DBE788A5FB573347A779E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3152F95119695E67CF4B8F71 /* Pods_SongsTable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33AAAFC828EF3AD600B3E883 /* Build configuration list for PBXNativeTarget "SongsTable" */;
 			buildPhases = (
+				0EB42C8F744256E85A16270B /* [CP] Check Pods Manifest.lock */,
 				33AAAFB028EF3AD400B3E883 /* Sources */,
 				33AAAFB128EF3AD400B3E883 /* Frameworks */,
 				33AAAFB228EF3AD400B3E883 /* Resources */,
+				BB57BBBA2888ABAC7C14117B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +213,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EB42C8F744256E85A16270B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SongsTable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB57BBBA2888ABAC7C14117B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SongsTable/Pods-SongsTable-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SongsTable/Pods-SongsTable-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SongsTable/Pods-SongsTable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33AAAFB028EF3AD400B3E883 /* Sources */ = {
@@ -346,6 +415,7 @@
 		};
 		33AAAFC928EF3AD600B3E883 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E9BE1ECE181078663CB84A4 /* Pods-SongsTable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +444,7 @@
 		};
 		33AAAFCA28EF3AD600B3E883 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14EE2BE8A61C3FDFC487F34E /* Pods-SongsTable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
