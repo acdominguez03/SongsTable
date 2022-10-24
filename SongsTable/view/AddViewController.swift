@@ -20,7 +20,7 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBOutlet weak var urlImage: UITextField!
     
-    private let addSongPresenter: AddSongPresenter = AddSongPresenter(pickerViewData: PickerViewData())
+    private let addSongPresenter: AddSongPresenter = AddSongPresenter(pickerViewData: PickerViewData(), songService: SongService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +50,8 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         if (songTitle.text!.isEmpty || songDescription.text!.isEmpty){
             showToast(controller: self, message: "Fill all the gaps", seconds: 1)
         }else{
-            let songTableController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SongTableController") as? SongTableViewController
-            /*songTableController!.tableViewPresenter.addSong(imageUrl: "https://metalcry.com/wp-content/uploads/2018/07/2011-04-18_warcry_alfa_cover_400.jpeg", title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))*/
+            addSongPresenter.addSong(imageUrl: urlImage.text ?? "", title: songTitle.text ?? "", description: songDescription.text ?? "", category: songCategorie.selectedRow(inComponent: 0))
             showToast(controller: self, message: "Element added", seconds: 1)
-            songTableController!.tableView.reloadData()
         }
     }
     

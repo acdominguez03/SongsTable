@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jsX-9C-YqF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jsX-9C-YqF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +11,7 @@
         <!--SONGS-->
         <scene sceneID="hFI-PS-6uz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPB-No-NSg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="SongTableController" id="5a1-br-rAd" customClass="SongTableViewController" customModule="SongsTable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="q7G-Bs-12h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -19,7 +19,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="200" id="lBy-xw-3W9" customClass="SongCell" customModule="SongsTable" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lBy-xw-3W9" id="2Ka-js-APE">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -74,7 +74,6 @@
                         <segue destination="FMP-XA-kcx" kind="show" identifier="goToDetail" id="owA-P0-TM8"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uPB-No-NSg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1028" y="-246"/>
         </scene>
@@ -102,7 +101,7 @@
                 <navigationController storyboardIdentifier="Main" id="cHS-oh-Is6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Songs List" selectedImage="list.bullet.rectangle.portrait" catalog="system" id="H1A-hK-syB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cbi-d9-0iq">
-                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -123,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXz-Hj-fId">
-                                <rect key="frame" x="57" y="425" width="299" height="50"/>
+                                <rect key="frame" x="57" y="421" width="299" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="V2C-y9-OqJ"/>
                                 </constraints>
@@ -132,7 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DKp-R4-MZN">
-                                <rect key="frame" x="107" y="191" width="200" height="200"/>
+                                <rect key="frame" x="107" y="187" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="0wW-uc-3kN"/>
                                 </constraints>
@@ -150,7 +149,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aR4-ls-nRV">
-                                <rect key="frame" x="57" y="483" width="299" height="133"/>
+                                <rect key="frame" x="57" y="479" width="299" height="137"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -198,7 +197,7 @@
                 <navigationController title="ADD" id="a7Z-HQ-oQq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="jiD-Gq-acv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="d1f-6b-sVA">
-                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -339,11 +338,16 @@
             <point key="canvasLocation" x="906" y="-1043"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="odW-ko-G47">
+            <size key="intrinsicContentSize" width="68" height="39.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

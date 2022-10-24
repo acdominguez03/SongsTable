@@ -11,9 +11,11 @@ import UIKit
 class AddSongPresenter{
     
     private let pickerViewData: PickerViewData
+    private let songService: SongService
     
-    init(pickerViewData: PickerViewData){
+    init(pickerViewData: PickerViewData, songService: SongService){
         self.pickerViewData = pickerViewData
+        self.songService = songService
     }
 
     func setPickerViewData() -> Int{
@@ -23,6 +25,11 @@ class AddSongPresenter{
     
     func returnTitleForRowPickerView(row: Int) -> String{
         pickerViewData.getPickerViewData()[row]
+    }
+    
+    
+    func addSong(imageUrl: String, title: String, description: String, category: Int){
+        songService.addSong(imageUrl: imageUrl, title: title, description: description, category: category)
     }
     
     func passUrlToData(urlData: String) -> Data{

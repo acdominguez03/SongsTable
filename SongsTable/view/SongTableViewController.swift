@@ -13,14 +13,9 @@ class SongTableViewController: UITableViewController{
     
     private var tableViewPresenter: TableViewPresenter = TableViewPresenter(songService: SongService())
     
-    init(tableViewPresenter: TableViewPresenter) {
-        self.tableViewPresenter = tableViewPresenter
-        self.tableViewPresenter.initSongs()
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +29,7 @@ class SongTableViewController: UITableViewController{
         customCell.songAutor.text = tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).description
         
         customCell.songImage.image = UIImage(data: tableViewPresenter.passUrlToData(urlData: tableViewPresenter.getSongBySectionAndPosition(indexPath: indexPath).imageUrl))!
+        customCell.songImage.layer.cornerRadius = 25
         
         customCell.songTitle.type = .continuous
         customCell.songTitle.speed = .duration(3.0)
@@ -80,6 +76,7 @@ class SongTableViewController: UITableViewController{
         
         detailViewController!.detailPresenter.detailSong = tableViewPresenter.songDetail
         detailViewController!.detailPresenter.category = tableViewPresenter.categoryDetail
+        
     
         self.navigationController?.pushViewController(detailViewController!, animated: true)
     }

@@ -56,11 +56,4 @@ class TableViewPresenter{
         
         categoryDetail = indexPath.section
     }
-    
-    
-    func addSong(imageUrl: String, title: String, description: String, category: Int){
-        songService.addSong(imageUrl: imageUrl, title: title, description: description, category: category)
-    }
-    
-    
 }
