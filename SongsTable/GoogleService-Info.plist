@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>420979389048-o1j27l2ifn46qp1gcskbuaeoqmlnv222.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.420979389048-o1j27l2ifn46qp1gcskbuaeoqmlnv222</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCIie0KrL31l-vYVAerrgYEYCgQZYp4yp8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>420979389048</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>andrew.SongsTable</string>
+	<key>PROJECT_ID</key>
+	<string>songs-andres2022</string>
+	<key>STORAGE_BUCKET</key>
+	<string>songs-andres2022.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:420979389048:ios:bfd75858a8fc528503738d</string>
+</dict>
+</plist>

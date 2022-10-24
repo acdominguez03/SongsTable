@@ -11,6 +11,7 @@
 		101D24AC28F819E500B62A89 /* PickerViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101D24AB28F819E500B62A89 /* PickerViewData.swift */; };
 		101D24AE28F81A0300B62A89 /* SongService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101D24AD28F81A0300B62A89 /* SongService.swift */; };
 		101D24B028F81A2C00B62A89 /* CategorySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101D24AF28F81A2C00B62A89 /* CategorySong.swift */; };
+		106996782905D4AF00B3ACDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 106996772905D4AF00B3ACDC /* GoogleService-Info.plist */; };
 		10B63E7528F746D4000A178D /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B63E7428F746D4000A178D /* TableViewPresenter.swift */; };
 		2D86B3B994A8FAC0DF57A14E /* Pods_SongsTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3152F95119695E67CF4B8F71 /* Pods_SongsTable.framework */; };
 		333116EB28F871B300CC415A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333116EA28F871B300CC415A /* AddViewController.swift */; };
@@ -31,6 +32,7 @@
 		101D24AB28F819E500B62A89 /* PickerViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewData.swift; sourceTree = "<group>"; };
 		101D24AD28F81A0300B62A89 /* SongService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongService.swift; sourceTree = "<group>"; };
 		101D24AF28F81A2C00B62A89 /* CategorySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySong.swift; sourceTree = "<group>"; };
+		106996772905D4AF00B3ACDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10B63E7428F746D4000A178D /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
 		14EE2BE8A61C3FDFC487F34E /* Pods-SongsTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsTable.release.xcconfig"; path = "Target Support Files/Pods-SongsTable/Pods-SongsTable.release.xcconfig"; sourceTree = "<group>"; };
 		1E9BE1ECE181078663CB84A4 /* Pods-SongsTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongsTable.debug.xcconfig"; path = "Target Support Files/Pods-SongsTable/Pods-SongsTable.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				33AAAFC028EF3AD600B3E883 /* Assets.xcassets */,
 				33AAAFC228EF3AD600B3E883 /* LaunchScreen.storyboard */,
 				33AAAFC528EF3AD600B3E883 /* Info.plist */,
+				106996772905D4AF00B3ACDC /* GoogleService-Info.plist */,
 			);
 			path = SongsTable;
 			sourceTree = "<group>";
@@ -134,7 +137,6 @@
 				1E9BE1ECE181078663CB84A4 /* Pods-SongsTable.debug.xcconfig */,
 				14EE2BE8A61C3FDFC487F34E /* Pods-SongsTable.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33AAAFC428EF3AD600B3E883 /* LaunchScreen.storyboard in Resources */,
+				106996782905D4AF00B3ACDC /* GoogleService-Info.plist in Resources */,
 				33AAAFC128EF3AD600B3E883 /* Assets.xcassets in Resources */,
 				33AAAFBF28EF3AD400B3E883 /* Main.storyboard in Resources */,
 			);

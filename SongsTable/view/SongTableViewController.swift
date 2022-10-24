@@ -6,19 +6,21 @@
 //
 
 import UIKit
-import FirebaseFirestore
+
 
 
 class SongTableViewController: UITableViewController{
     
-    var tableViewPresenter: TableViewPresenter = TableViewPresenter(songService: SongService())
+    private var tableViewPresenter: TableViewPresenter = TableViewPresenter(songService: SongService())
     
-    private let database = Firestore.firestore()
+    init(tableViewPresenter: TableViewPresenter) {
+        self.tableViewPresenter = tableViewPresenter
+        self.tableViewPresenter.initSongs()
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //tableViewPresenter.getDataForAdd(giveTableView: tableView, giveTableViewPresenter: tableViewPresenter)
-        
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,6 +84,22 @@ class SongTableViewController: UITableViewController{
         self.navigationController?.pushViewController(detailViewController!, animated: true)
     }
     
-    func 
+    /*func setDataToDatabase(){
+        var songService = SongService()
+        var songArray = songService.getSongs()[4].categorySongs
+        var songCategory = songService.getSongs()[4].categoryName!
+    
+        songArray!.forEach{ song in
+            database.collection(songCategory).document(song.title).setData(
+                [
+                    "title": song.title,
+                    "description": song.description,
+                    "imageUrl": song.imageUrl
+                ]
+                
+            )
+        }
+        
+    }*/
     
 }

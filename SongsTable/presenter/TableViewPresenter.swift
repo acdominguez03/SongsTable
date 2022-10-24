@@ -7,8 +7,8 @@
 
 import Foundation
 
+
 class TableViewPresenter{
-    
     
     let songService: SongService
     
@@ -22,7 +22,7 @@ class TableViewPresenter{
     
     
     func initSongs(){
-        songService.initSongs()
+        songService.getSongsFromDB()
     }
     
     func getSongsCount() -> Int{
@@ -61,4 +61,6 @@ class TableViewPresenter{
     func addSong(imageUrl: String, title: String, description: String, category: Int){
         songService.addSong(imageUrl: imageUrl, title: title, description: description, category: category)
     }
+    
+    
 }
